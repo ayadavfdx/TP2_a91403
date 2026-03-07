@@ -51,9 +51,9 @@ class GestorStock:
         Se for fornecido um valor negativo ou zero, o preço é colocado a 0."""
         self.__preco_atual=valor
         if valor <=0:
-            return 0
+            self.__preco_atual = 0
         else:
-            return valor
+            self.__preco_atual = valor
 
     @property
     def quantidade(self) -> int:
@@ -66,9 +66,9 @@ class GestorStock:
         Se for fornecido um valor negativo, a quantidade é colocada a 0."""
         self.__quantidade= valor
         if valor <0:
-            return 0
+            self.__quantidade= 0
         else:
-            return valor
+            self.__quantidade= valor
 
     @property
     def preco_medio_compra(self) -> float:
