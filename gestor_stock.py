@@ -58,7 +58,7 @@ class GestorStock:
     def preco_atual(self, valor: float):
         """Define o preço atual da ação. Deve ser positivo.
         Se for fornecido um valor negativo ou zero, o preço é colocado a 0."""
-        self.__preco_atual=self.__validate_positive_number(valor)
+        self.__preco_atual=self.validate_positive_number(valor)
 
     @property
     def quantidade(self) -> int:
@@ -69,17 +69,17 @@ class GestorStock:
     def quantidade(self, valor: int):
         """Define a quantidade de ações em carteira.
         Se for fornecido um valor negativo, a quantidade é colocada a 0."""
-        self.__quantidade= self.__validate_positive_number(valor)
+        self.__quantidade= self.validate_positive_number(valor)
 
     @property
     def preco_medio_compra(self) -> float:
         """Devolve o preço médio de compra vigente de todo o stock."""
-        pass
+        return self.__preco_medio_compra
 
     @preco_medio_compra.setter
     def preco_medio_compra(self, valor: float):
         """Define o preço médio de compra."""
-        pass
+        self.__preco_medio_compra= valor
 
     @property
     def lucro_realizado(self) -> float:
@@ -117,6 +117,7 @@ class GestorStock:
         Retorna o fundo depositado (que será 0.0 se for passado um valor inválido <= 0)."""
         pass
 
-test= GestorStock("Msft","a a pple",-5,-2)
+test= GestorStock("Msft","a a pple",0,0)
 
 print(test)
+
