@@ -50,13 +50,13 @@ class GestorStock:
     @property
     def quantidade(self) -> int:
         """Devolve a quantidade de ações em carteira."""
-        pass
+        return self.__quantidade
 
     @quantidade.setter
     def quantidade(self, valor: int):
         """Define a quantidade de ações em carteira.
         Se for fornecido um valor negativo, a quantidade é colocada a 0."""
-        pass
+        self.__quantidade= self.__validate_positive_number(valor)
 
     @property
     def preco_medio_compra(self) -> float:
