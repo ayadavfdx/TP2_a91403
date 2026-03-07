@@ -13,12 +13,12 @@ class GestorStock:
     def simbolo(self) -> str:
         """Devolve o símbolo da ação (ex: AAPL).
         O símbolo deve ser guardado e devolvido sem espaços adicionais e em maiúsculas."""
-        pass
+        return self.__simbolo
 
     @simbolo.setter
     def simbolo(self, valor: str):
         """Define o símbolo da ação."""
-        pass
+        self.__simbolo= valor.lower().strip()
 
     @property
     def nome(self) -> str:
