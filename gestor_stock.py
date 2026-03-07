@@ -3,7 +3,16 @@
 class GestorStock:
     """Classe que representa um gestor de carteira de uma ação específica."""
 
-    def __init__(self, simbolo: str, nome: str, preco_atual=0.0, quantidade=0, preco_medio_compra=0.0, lucro_realizado=0.0 ):
+    def __init__(
+            self, 
+            simbolo: str, 
+            nome: str, 
+            preco_atual=0.0, 
+            quantidade=0, 
+            preco_medio_compra=0.0, 
+            lucro_realizado=0.0 
+            ):
+        
         self.simbolo=simbolo
         self.nome=nome
         self.preco_atual=preco_atual
