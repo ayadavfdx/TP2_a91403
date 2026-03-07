@@ -7,25 +7,16 @@ class GestorStock:
             self, 
             simbolo: str, 
             nome: str, 
-            preco_atual=0.0, 
-            quantidade=0, 
-            preco_medio_compra=0.0, 
-            lucro_realizado=0.0 
+            preco_atual= 0.0, 
+            quantidade= 0, 
             ):
         
-        self.simbolo=simbolo
-        self.nome=nome
-        self.preco_atual=preco_atual
-        self.quantidade=quantidade
-        self.preco_medio_compra=preco_medio_compra
-        self.lucro_realizado=lucro_realizado
-
-    #Function to validate positive numbers
-    def validate_positive_number(self,value):
-        if value <=0:
-            return 0
-        else:
-            return value
+        self.simbolo= simbolo
+        self.nome= nome
+        self.preco_atual= preco_atual
+        self.quantidade= quantidade
+        self.preco_medio_compra= preco_atual
+        self.lucro_realizado= 0.0
 
     @property
     def simbolo(self) -> str:
@@ -84,12 +75,12 @@ class GestorStock:
     @property
     def lucro_realizado(self) -> float:
         """Devolve o lucro (ou prejuízo) consolidado ao longo de todo o histórico de transações de venda e dividendos fechados."""
-        pass
+        return self.__lucro_realizado
 
     @lucro_realizado.setter
     def lucro_realizado(self, valor: float):
         """Define o lucro realizado."""
-        pass
+        self.__lucro_realizado=valor
 
     def comprar(self, quantidade: int, preco: float) -> bool:
         """Realiza uma compra de ações.
