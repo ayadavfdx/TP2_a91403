@@ -100,7 +100,7 @@ class GestorStock:
         
         total= self.__quantidade + quantidade
         
-        #media pesada(preco_medio_compra*self.quantidade + preco*quantidade)/total
+        #media pesada ->(preco_medio_compra*self.quantidade + preco*quantidade)/total
         self.__preco_medio_compra = (self.__preco_medio_compra*self.quantidade + preco*quantidade)/total
         
         self.__quantidade= total
@@ -115,7 +115,7 @@ class GestorStock:
         if preco <=0 or quantidade <=0:
             return False
         
-        #lucro (preco-self.__preco_medio_compra)*quantidade
+        #lucro -> (preco-self.__preco_medio_compra)*quantidade
         profit= (preco - self.__preco_medio_compra)* quantidade
 
         self.__lucro_realizado += profit
@@ -132,14 +132,20 @@ class GestorStock:
         """Apurar rentabilidade não realizada ao valor de cotação presente.
         Diferença entre a avaliação do ativo aos preços de hoje, e a avaliação ao preço que foi comprado."""
         
+        #lucro_potencial -> (self.__preco_actual-self.__preco_medio_compra)*self.quantidade
         potential_profit= (self.__preco_atual-self.__preco_medio_compra)*self.quantidade
         return potential_profit
     
     def receber_dividendo(self, dividendo_por_acao: float) -> float:
         """Apurar dividendos totais com o número de ações em posse, adicionando diretamente ao lucro_realizado da posição.
         Retorna o fundo depositado (que será 0.0 se for passado um valor inválido <= 0)."""
-        pass
+        if dividendo_por_acao <=0:
+            return 0.0
 
-test= GestorStock("Msft","a a pple",0,0)
-print(test)
+        #receber_dividendo -> self.__quantidade * dividendo_por_acao
+        total_dividend= self.__quantidade * dividendo_por_acao
+        self.lucro_realizado += total_dividend
+
+        return total_dividend
+    
 
