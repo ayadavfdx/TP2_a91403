@@ -49,7 +49,11 @@ class GestorStock:
     def preco_atual(self, valor: float):
         """Define o preço atual da ação. Deve ser positivo.
         Se for fornecido um valor negativo ou zero, o preço é colocado a 0."""
-        self.__preco_atual=self.validate_positive_number(valor)
+        self.__preco_atual=valor
+        if valor <=0:
+            return 0
+        else:
+            return valor
 
     @property
     def quantidade(self) -> int:
