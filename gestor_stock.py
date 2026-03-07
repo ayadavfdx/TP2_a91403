@@ -121,12 +121,12 @@ class GestorStock:
         self.__lucro_realizado += lucro
         self.__quantidade-= quantidade
         self.__preco_atual = preco
-        
+
         return True
 
     def valor_total(self) -> float:
         """Calcula o valor total da posição na carteira (quantidade * preço_atual)."""
-        pass
+        return self.__quantidade*self.__preco_atual
 
     def lucro_potencial(self) -> float:
         """Apurar rentabilidade não realizada ao valor de cotação presente.
