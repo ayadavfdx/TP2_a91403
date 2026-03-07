@@ -9,6 +9,11 @@ class GestorStock:
         self.preco_atual=preco_atual
         self.quantidade=quantidade
 
+    #Function to validate positive numbers
+    def validate_positive_number(self,value):
+        if value <=0:
+            return 0
+
     @property
     def simbolo(self) -> str:
         """Devolve o símbolo da ação (ex: AAPL).
