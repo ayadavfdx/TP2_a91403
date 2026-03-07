@@ -64,7 +64,11 @@ class GestorStock:
     def quantidade(self, valor: int):
         """Define a quantidade de ações em carteira.
         Se for fornecido um valor negativo, a quantidade é colocada a 0."""
-        self.__quantidade= self.validate_positive_number(valor)
+        self.__quantidade= valor
+        if valor <0:
+            return 0
+        else:
+            return valor
 
     @property
     def preco_medio_compra(self) -> float:
