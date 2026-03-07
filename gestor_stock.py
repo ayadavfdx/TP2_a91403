@@ -114,7 +114,9 @@ class GestorStock:
         Retorna True no sucesso e False no insucesso (seja por parâmetros errados <= 0 ou pela inexistência de posições suficientes)."""
         if preco <=0 or quantidade <=0:
             return False
-        
+        elif quantidade > self.__quantidade:
+            return False
+
         #lucro -> (preco-self.__preco_medio_compra)*quantidade
         profit= (preco - self.__preco_medio_compra)* quantidade
 
