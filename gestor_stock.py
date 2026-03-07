@@ -150,4 +150,15 @@ class GestorStock:
 
         return total_dividend
     
+    #String to show in console
+    def __str__(self):
+        return (
+            f"Name: {self.__nome} - ({self.__simbolo})\n"
+            f"Current Price: {self.preco_atual}\n"
+            f"Quantity: {self.__quantidade}\n"
+            f"Profit: {self.lucro_realizado}\n"
+            f"Total value: {self.valor_total()}"
+        )
 
+test= GestorStock("Aapl","Apple   ",250.65,10)
+print(test)
