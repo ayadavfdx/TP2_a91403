@@ -3,11 +3,13 @@
 class GestorStock:
     """Classe que representa um gestor de carteira de uma ação específica."""
 
-    def __init__(self, simbolo: str, nome: str, preco_atual=0.0, quantidade=0):
+    def __init__(self, simbolo: str, nome: str, preco_atual=0.0, quantidade=0, preco_medio_compra=0.0, lucro_realizado=0.0 ):
         self.simbolo=simbolo
         self.nome=nome
         self.preco_atual=preco_atual
         self.quantidade=quantidade
+        self.preco_medio_compra=preco_medio_compra
+        self.lucro_realizado=lucro_realizado
 
     #Function to validate positive numbers
     def validate_positive_number(self,value):
@@ -23,7 +25,7 @@ class GestorStock:
     @simbolo.setter
     def simbolo(self, valor: str):
         """Define o símbolo da ação."""
-        self.__simbolo= valor.lower().strip()
+        self.__simbolo= valor.upper().strip()
 
     @property
     def nome(self) -> str:
