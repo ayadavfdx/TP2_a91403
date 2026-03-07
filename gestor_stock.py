@@ -24,6 +24,8 @@ class GestorStock:
     def validate_positive_number(self,value):
         if value <=0:
             return 0
+        else:
+            return value
 
     @property
     def simbolo(self) -> str:
@@ -50,13 +52,13 @@ class GestorStock:
     @property
     def preco_atual(self) -> float:
         """Devolve o preço atual da ação."""
-        return self.__preco_actual
+        return self.__preco_atual
 
     @preco_atual.setter
     def preco_atual(self, valor: float):
         """Define o preço atual da ação. Deve ser positivo.
         Se for fornecido um valor negativo ou zero, o preço é colocado a 0."""
-        self.__preco_actual=self.__validate_positive_number(valor)
+        self.__preco_atual=self.__validate_positive_number(valor)
 
     @property
     def quantidade(self) -> int:
@@ -114,3 +116,7 @@ class GestorStock:
         """Apurar dividendos totais com o número de ações em posse, adicionando diretamente ao lucro_realizado da posição.
         Retorna o fundo depositado (que será 0.0 se for passado um valor inválido <= 0)."""
         pass
+
+test= GestorStock("Msft","a a pple",-5,-2)
+
+print(test)
