@@ -24,12 +24,12 @@ class GestorStock:
     def nome(self) -> str:
         """Devolve o nome da empresa.
         O nome deve ser guardado e devolvido sem espaços adicionais e com as iniciais em maiúsculas (Title Case)."""
-        pass
+        return self.__nome
 
     @nome.setter
     def nome(self, valor: str):
         """Define o nome da empresa."""
-        pass
+        self.__nome=valor.strip().title()
 
     @property
     def preco_atual(self) -> float:
