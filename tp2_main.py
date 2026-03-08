@@ -16,5 +16,9 @@ def main():
     print(f"{Fore.RED}\nAfter selling: ")
     print(stock)
 
+    stock.receber_dividendo(2.9)
+    print(f"{Fore.RED}\nAfter dividend: ")
+    print(stock)
+    
 if __name__ == "__main__":
     main()
