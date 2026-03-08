@@ -9,7 +9,9 @@ Libraries used:
 - **yfinance**
 
 ## Installation
-pip install colorama plotly yfinance (cmd.exe)
+```bash
+pip install colorama plotly yfinance
+```
 
 ## Description
 This project is a simple stock portfolio manager implemented in Python as part of an Object-Oriented Programming exercise.
