@@ -6,6 +6,7 @@ def show_graph(symbol: str):
 
     figure= go.Figure()
 
+    #Graph
     figure.add_trace(
         go.Scatter(
             x=data.index,
@@ -13,4 +14,12 @@ def show_graph(symbol: str):
             mode="lines",
             name=symbol
         )
+    )
+
+    #Style
+    figure.update_layout(
+        title= f"{symbol} Stock Price",
+        xaxis_title= "Date",
+        yaxis_title= "Price",
+        template= "plotly_dark"
     )
