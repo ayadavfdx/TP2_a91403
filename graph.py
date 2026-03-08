@@ -2,7 +2,8 @@ import yfinance as yf
 import plotly.graph_objects as go
 
 def show_graph(symbol: str):
-    data = yf.download(symbol)
+    ticker= yf.Ticker(symbol) 
+    data = ticker.history(period="3mo")
 
     figure= go.Figure()
 
@@ -12,7 +13,8 @@ def show_graph(symbol: str):
             x=data.index,
             y=data["Close"],
             mode="lines",
-            name=symbol
+            name=symbol,
+            line=dict(color="green",width=4)
         )
     )
 
