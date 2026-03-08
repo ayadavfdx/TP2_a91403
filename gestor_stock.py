@@ -1,4 +1,7 @@
 # gestor_stock.py
+from colorama import Style,init,Fore
+init(autoreset=True)
+
 
 class GestorStock:
     """Classe que representa um gestor de carteira de uma ação específica."""
