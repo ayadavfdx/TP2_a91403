@@ -156,22 +156,19 @@ class GestorStock:
     #String to show in console
     def __str__(self):
         return (
-            f"{Fore.LIGHTWHITE_EX}Name:{Style.RESET_ALL}"
-            f"{Fore.GREEN}{self.__nome}{Style.RESET_ALL}"  
+            f"{Fore.LIGHTWHITE_EX}Name         |{Style.RESET_ALL}"
+            f"{Fore.GREEN} {self.__nome}{Style.RESET_ALL}"  
             f"{Fore.CYAN} ({self.__simbolo}){Style.RESET_ALL}\n"
 
-            f"{Fore.LIGHTWHITE_EX}Current Price:{Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}Current Price|{Style.RESET_ALL}"
             f"{Fore.LIGHTYELLOW_EX} {self.preco_atual}\n"
             
-            f"{Fore.LIGHTWHITE_EX}Quantity: {Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}Quantity     | {Style.RESET_ALL}"
             f"{Fore.LIGHTYELLOW_EX}{self.__quantidade}\n"
             
-            f"{Fore.LIGHTWHITE_EX}Profit: {Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}Profit       | {Style.RESET_ALL}"
             f"{Fore.LIGHTYELLOW_EX}{self.lucro_realizado}\n"
             
-            f"{Fore.LIGHTWHITE_EX}Total value: {Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}Total value  | {Style.RESET_ALL}"
             f"{Fore.LIGHTYELLOW_EX}{self.valor_total()}"
         )
-
-test= GestorStock("Aapl","Apple   ",250.65,10)
-print(test)
