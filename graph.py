@@ -23,3 +23,5 @@ def show_graph(symbol: str):
         yaxis_title= "Price",
         template= "plotly_dark"
     )
+
+    figure.show()
