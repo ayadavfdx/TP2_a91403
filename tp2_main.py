@@ -1,6 +1,6 @@
 from gestor_stock import GestorStock
 from graph import show_graph
-from colorama import Fore, Style,init
+from colorama import Fore,init
 init()
 
 def main():
@@ -19,6 +19,7 @@ def main():
     stock.receber_dividendo(2.9)
     print(f"{Fore.RED}\nAfter dividend: ")
     print(stock)
-    
+
+    show_graph(stock.simbolo)
 if __name__ == "__main__":
     main()
