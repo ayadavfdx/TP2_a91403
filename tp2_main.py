@@ -12,5 +12,9 @@ def main():
     print(f"{Fore.RED}\nAfter buying: ")
     print(stock)
 
+    stock.vender(3,220)
+    print(f"{Fore.RED}\nAfter selling: ")
+    print(stock)
+
 if __name__ == "__main__":
     main()
